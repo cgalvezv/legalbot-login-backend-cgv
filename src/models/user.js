@@ -9,7 +9,7 @@ const user_schema = new mongoose.Schema({
     lastname: String,
     gender: {
         type: String,
-        enum : ['None','M', 'F'],
+        enum : ['M', 'F'],
         default: 'None'
     },
     email: {

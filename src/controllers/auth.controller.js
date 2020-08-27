@@ -13,7 +13,7 @@ const special_character_regex = auth_config.special_character_regex
 const user_schema = Joi.object({
     name: Joi.string().min(3).required(),
     lastname: Joi.string(),
-    gender: Joi.string().valid('M','F','Other'),
+    gender: Joi.string().valid('M','F'),
     email: Joi.string().email().required(),
     password: Joi.string().max(8).pattern(special_character_regex)
 });
@@ -71,7 +71,10 @@ const sign_in = (request, response) => {
 
         [ access_token, refresh_token ] = getJWTs(user.id);
 
-        response.status(200).send(getUserJson(user, access_token, refresh_token));
+        response.status(200).send({ 
+            msg: 'User was logged in successfully!',
+            user: getUserJson(user, access_token, refresh_token)
+         });
     })
 }
 //Init: Private methods
