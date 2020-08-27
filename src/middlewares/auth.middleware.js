@@ -13,7 +13,6 @@ const duplicateEmail = (request, response, next) => {
         if (user) {
             return response.status(400).send({ msg: 'This email is already in use!'})
         }
-
         next();
     })
 }

@@ -1,6 +1,6 @@
 {
   "name": "legalbot-login-backend-cgv",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Legalbot login test backend",
   "main": "server.js",
   "scripts": {
